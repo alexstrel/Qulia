@@ -36,19 +36,19 @@ cfma_d8 =ComplexFMA{8 , Float64}
 cfma_f8 =ComplexFMA{8 , Float64}
 cfma_f16=ComplexFMA{16, Float64}
 
-@inline function fma(x::cdouble4, y::cdouble4, z::cdouble4)
+@inline function fma(x::pcdouble4, y::pcdouble4, z::pcdouble4)
    cfma_d4(x, y, z)
 end
 
-@inline function fma(x::cdouble8, y::cdouble8, z::cdouble8)
+@inline function fma(x::pcdouble8, y::pcdouble8, z::pcdouble8)
    cfma_d8(x, y, z)
 end
 
-@inline function fma(x::cfloat8, y::cfloat8, z::cfloat8)
+@inline function fma(x::pcfloat8, y::pcfloat8, z::pcfloat8)
    cfma_f8(x, y, z)
 end
 
-@inline function fma(x::cfloat16, y::cfloat16, z::cfloat16)
+@inline function fma(x::pcfloat16, y::pcfloat16, z::pcfloat16)
    cfma_f16(x, y, z)
 end
 
